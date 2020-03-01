@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\deivi\\source\\repos\\Arvores\\ArvoreBinaria\\ArvoreBinaria.csproj": {}
+    "C:\\Users\\deivi\\Documents\\GitHub\\Arvores\\Arvores\\ArvoreBinaria\\ArvoreBinaria.csproj": {}
   },
   "projects": {
-    "C:\\Users\\deivi\\source\\repos\\Arvores\\ArvoreBinaria\\ArvoreBinaria.csproj": {
+    "C:\\Users\\deivi\\Documents\\GitHub\\Arvores\\Arvores\\ArvoreBinaria\\ArvoreBinaria.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\deivi\\source\\repos\\Arvores\\ArvoreBinaria\\ArvoreBinaria.csproj",
+        "projectUniqueName": "C:\\Users\\deivi\\Documents\\GitHub\\Arvores\\Arvores\\ArvoreBinaria\\ArvoreBinaria.csproj",
         "projectName": "ArvoreBinaria",
-        "projectPath": "C:\\Users\\deivi\\source\\repos\\Arvores\\ArvoreBinaria\\ArvoreBinaria.csproj",
+        "projectPath": "C:\\Users\\deivi\\Documents\\GitHub\\Arvores\\Arvores\\ArvoreBinaria\\ArvoreBinaria.csproj",
         "packagesPath": "C:\\Users\\deivi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\deivi\\source\\repos\\Arvores\\ArvoreBinaria\\obj\\",
+        "outputPath": "C:\\Users\\deivi\\Documents\\GitHub\\Arvores\\Arvores\\ArvoreBinaria\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\deivi\\AppData\\Roaming\\NuGet\\NuGet.Config",

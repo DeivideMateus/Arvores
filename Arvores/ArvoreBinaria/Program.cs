@@ -7,6 +7,8 @@ namespace ArvoreBinaria
         static void Main(string[] args)
         {
 
+
+            Console.ReadLine();
         }
     }
 }

@@ -4,13 +4,13 @@ using System.Text;
 
 namespace ArvoreBinaria
 {
-    class No<T>
+    class No
     {
         public int Chave { get; set; }
         public object Valor { get; set; }
-        public No<T> Esquerdo { get; set; }
-        public No<T> Direito { get; set; }
-        //public No<T> Pai { get; set; }
+        public No Esquerdo { get; set; }
+        public No Direito { get; set; }
+        public No Pai { get; set; }
 
         public No()
         {
