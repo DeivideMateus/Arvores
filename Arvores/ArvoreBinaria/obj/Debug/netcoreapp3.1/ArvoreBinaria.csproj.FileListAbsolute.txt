@@ -20,3 +20,8 @@ C:\Users\deivi\Documents\GitHub\Arvores\Arvores\ArvoreBinaria\obj\Debug\netcorea
 C:\Users\deivi\Documents\GitHub\Arvores\Arvores\ArvoreBinaria\obj\Debug\netcoreapp3.1\ArvoreBinaria.AssemblyInfo.cs
 C:\Users\deivi\Documents\GitHub\Arvores\Arvores\ArvoreBinaria\obj\Debug\netcoreapp3.1\ArvoreBinaria.dll
 C:\Users\deivi\Documents\GitHub\Arvores\Arvores\ArvoreBinaria\obj\Debug\netcoreapp3.1\ArvoreBinaria.pdb
+C:\Users\deivide.nascimento\Documents\GitHub\Talents2\Arvores\Arvores\ArvoreBinaria\obj\Debug\netcoreapp3.1\ArvoreBinaria.csprojAssemblyReference.cache
+C:\Users\deivide.nascimento\Documents\GitHub\Talents2\Arvores\Arvores\ArvoreBinaria\obj\Debug\netcoreapp3.1\ArvoreBinaria.AssemblyInfoInputs.cache
+C:\Users\deivide.nascimento\Documents\GitHub\Talents2\Arvores\Arvores\ArvoreBinaria\obj\Debug\netcoreapp3.1\ArvoreBinaria.AssemblyInfo.cs
+C:\Users\deivide.nascimento\Documents\GitHub\Talents2\Arvores\Arvores\ArvoreBinaria\obj\Debug\netcoreapp3.1\ArvoreBinaria.dll
+C:\Users\deivide.nascimento\Documents\GitHub\Talents2\Arvores\Arvores\ArvoreBinaria\obj\Debug\netcoreapp3.1\ArvoreBinaria.pdb

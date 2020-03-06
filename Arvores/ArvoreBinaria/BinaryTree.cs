@@ -4,14 +4,13 @@ using System.Text;
 
 namespace ArvoreBinaria
 {
-    class BinaryTree
+   public class BinaryTree<T, F>
     {
-        public No Raiz { get; set; }
+        public No<T, F> Raiz { get; set; }
 
-
-        public void Adicionar(int chave, object valor)
+        public void Adicionar(T chave, F valor)
         {
-            No novoNo = new No(chave, valor);
+            No<T, F> novoNo = new No<T, F>( chave,  valor);
 
             if (this.Raiz == null)
             {
@@ -19,8 +18,8 @@ namespace ArvoreBinaria
             }
             else
             {
-                No noAtual = this.Raiz;
-                No noPai;
+                No<T, F> noAtual = this.Raiz;
+                No<T, F> noPai;
 
                 while (true)
                 {
@@ -61,7 +60,7 @@ namespace ArvoreBinaria
 
         }
 
-        public BinaryTree(No novoNo)
+        public BinaryTree(No<T> novoNo)
         {
             this.Raiz = novoNo;
         }
