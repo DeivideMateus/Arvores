@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ArvoreBinaria
 {
-    public class No<T, F>
+    public class No<T ,F> where T: IComparable
     {
         public T Chave { get; set; }
         public F Valor { get; set; }

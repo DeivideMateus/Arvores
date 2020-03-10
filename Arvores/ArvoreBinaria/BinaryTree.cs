@@ -4,13 +4,14 @@ using System.Text;
 
 namespace ArvoreBinaria
 {
-   public class BinaryTree<T, F>
+    public class BinaryTree<T, F> where T : IComparable
     {
         public No<T, F> Raiz { get; set; }
 
+
         public void Adicionar(T chave, F valor)
         {
-            No<T, F> novoNo = new No<T, F>( chave,  valor);
+            No<T, F> novoNo = new No<T, F>(chave, valor);
 
             if (this.Raiz == null)
             {
@@ -24,7 +25,7 @@ namespace ArvoreBinaria
                 while (true)
                 {
                     noPai = noAtual;
-                    if (chave < noAtual.Chave)
+                    if (chave.CompareTo(noAtual.Chave) < 0)
                     {
                         noAtual = noAtual.Esquerdo;
 
@@ -51,6 +52,37 @@ namespace ArvoreBinaria
             }
         }
 
+        public No<T, F> Buscar(T chave)
+        {
+            No<T, F> noAtual = this.Raiz;
+
+            while (!noAtual.Chave.Equals(chave))
+            {
+                if (chave.CompareTo(noAtual.Chave) < 0)
+                {
+                    noAtual = noAtual.Esquerdo;
+                }
+                else
+                {
+                    noAtual = noAtual.Direito;
+                }
+                if (noAtual == null)
+                {
+                    return null;
+                }
+            }
+            return noAtual;
+        }
+
+        public void Remover(T chave)
+        {
+
+        }
+
+        public void Navegar()
+        {
+
+        }
 
 
 
@@ -60,7 +92,7 @@ namespace ArvoreBinaria
 
         }
 
-        public BinaryTree(No<T> novoNo)
+        public BinaryTree(No<T, F> novoNo)
         {
             this.Raiz = novoNo;
         }

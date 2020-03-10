@@ -25,3 +25,9 @@ C:\Users\deivide.nascimento\Documents\GitHub\Talents2\Arvores\Arvores\ArvoreBina
 C:\Users\deivide.nascimento\Documents\GitHub\Talents2\Arvores\Arvores\ArvoreBinaria\obj\Debug\netcoreapp3.1\ArvoreBinaria.AssemblyInfo.cs
 C:\Users\deivide.nascimento\Documents\GitHub\Talents2\Arvores\Arvores\ArvoreBinaria\obj\Debug\netcoreapp3.1\ArvoreBinaria.dll
 C:\Users\deivide.nascimento\Documents\GitHub\Talents2\Arvores\Arvores\ArvoreBinaria\obj\Debug\netcoreapp3.1\ArvoreBinaria.pdb
+C:\Users\deivide.nascimento\Documents\GitHub\Talents2\Arvores\Arvores\ArvoreBinaria\bin\Debug\netcoreapp3.1\ArvoreBinaria.exe
+C:\Users\deivide.nascimento\Documents\GitHub\Talents2\Arvores\Arvores\ArvoreBinaria\bin\Debug\netcoreapp3.1\ArvoreBinaria.deps.json
+C:\Users\deivide.nascimento\Documents\GitHub\Talents2\Arvores\Arvores\ArvoreBinaria\bin\Debug\netcoreapp3.1\ArvoreBinaria.runtimeconfig.json
+C:\Users\deivide.nascimento\Documents\GitHub\Talents2\Arvores\Arvores\ArvoreBinaria\bin\Debug\netcoreapp3.1\ArvoreBinaria.runtimeconfig.dev.json
+C:\Users\deivide.nascimento\Documents\GitHub\Talents2\Arvores\Arvores\ArvoreBinaria\bin\Debug\netcoreapp3.1\ArvoreBinaria.dll
+C:\Users\deivide.nascimento\Documents\GitHub\Talents2\Arvores\Arvores\ArvoreBinaria\bin\Debug\netcoreapp3.1\ArvoreBinaria.pdb
