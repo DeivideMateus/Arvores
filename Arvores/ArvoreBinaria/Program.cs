@@ -26,6 +26,13 @@ namespace ArvoreBinaria
             Console.WriteLine(noBuscado.Valor);
             Console.WriteLine(noBuscado.Pai.Valor);
 
+            Console.WriteLine("\n");
+            arvore.NavegarEmOrdem(arvore.Raiz);
+            Console.WriteLine("\n");
+            arvore.NavegarPreOrdem(arvore.Raiz);
+            Console.WriteLine("\n");
+            arvore.NavegarPosOrdem(arvore.Raiz);
+
             Console.ReadLine();
         }
     }

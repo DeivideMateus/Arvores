@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\deivide.nascimento\\Documents\\GitHub\\Talents2\\Arvores\\Arvores\\ArvoreBinaria\\ArvoreBinaria.csproj": {}
+    "C:\\Users\\deivi\\Documents\\GitHub\\Arvores\\Arvores\\ArvoreBinaria\\ArvoreBinaria.csproj": {}
   },
   "projects": {
-    "C:\\Users\\deivide.nascimento\\Documents\\GitHub\\Talents2\\Arvores\\Arvores\\ArvoreBinaria\\ArvoreBinaria.csproj": {
+    "C:\\Users\\deivi\\Documents\\GitHub\\Arvores\\Arvores\\ArvoreBinaria\\ArvoreBinaria.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\deivide.nascimento\\Documents\\GitHub\\Talents2\\Arvores\\Arvores\\ArvoreBinaria\\ArvoreBinaria.csproj",
+        "projectUniqueName": "C:\\Users\\deivi\\Documents\\GitHub\\Arvores\\Arvores\\ArvoreBinaria\\ArvoreBinaria.csproj",
         "projectName": "ArvoreBinaria",
-        "projectPath": "C:\\Users\\deivide.nascimento\\Documents\\GitHub\\Talents2\\Arvores\\Arvores\\ArvoreBinaria\\ArvoreBinaria.csproj",
-        "packagesPath": "C:\\Users\\deivide.nascimento\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\deivide.nascimento\\Documents\\GitHub\\Talents2\\Arvores\\Arvores\\ArvoreBinaria\\obj\\",
+        "projectPath": "C:\\Users\\deivi\\Documents\\GitHub\\Arvores\\Arvores\\ArvoreBinaria\\ArvoreBinaria.csproj",
+        "packagesPath": "C:\\Users\\deivi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\deivi\\Documents\\GitHub\\Arvores\\Arvores\\ArvoreBinaria\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\deivide.nascimento\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\deivi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

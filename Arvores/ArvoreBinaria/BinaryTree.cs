@@ -79,11 +79,34 @@ namespace ArvoreBinaria
 
         }
 
-        public void Navegar()
+        public void NavegarEmOrdem(No<T, F> no)
         {
-
+            if (no != null){
+                NavegarEmOrdem(no.Esquerdo);
+                Console.Write(" " + no.Chave);
+                NavegarEmOrdem(no.Direito);
+            }
         }
 
+        public void NavegarPreOrdem(No<T, F> no)
+        {
+            if (no != null)
+            {            
+                Console.Write(" " + no.Chave);
+                NavegarEmOrdem(no.Esquerdo);
+                NavegarEmOrdem(no.Direito);
+            }
+        }
+
+        public void NavegarPosOrdem(No<T, F> no)
+        {
+            if (no != null)
+            {
+                NavegarEmOrdem(no.Esquerdo);               
+                NavegarEmOrdem(no.Direito);
+                Console.Write(" " + no.Chave);
+            }
+        }
 
 
 
