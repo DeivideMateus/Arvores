@@ -76,12 +76,61 @@ namespace ArvoreBinaria
 
         public void Remover(T chave)
         {
+            No<T, F> noParaRemover = Buscar(chave);
+
+            //Remoção de nó folha
+            if (noParaRemover.Esquerdo == null && noParaRemover.Direito == null)
+            {
+                if (noParaRemover.Pai.Esquerdo.Chave.Equals(noParaRemover.Chave))
+                {
+                    noParaRemover.Pai.Esquerdo = null;
+                }
+                else
+                {
+                    noParaRemover.Pai.Direito = null;
+                }
+                return;
+            }
+
+            //Remoção de nó com 1 filho
+            if (noParaRemover.Esquerdo == null && noParaRemover.Direito != null)
+            {
+                if (noParaRemover.Pai.Esquerdo.Chave.Equals(noParaRemover.Chave))
+                {
+                    noParaRemover.Pai.Esquerdo = noParaRemover.Direito;
+                    noParaRemover.Direito.Pai = noParaRemover.Pai;
+                }
+                else
+                {
+                    noParaRemover.Pai.Direito = noParaRemover.Direito;
+                    noParaRemover.Direito.Pai = noParaRemover.Pai;
+                }
+                return;
+            }
+            else if (noParaRemover.Esquerdo != null && noParaRemover.Direito == null)
+            {
+                if (noParaRemover.Pai.Esquerdo.Chave.Equals(noParaRemover.Chave))
+                {
+                    noParaRemover.Pai.Esquerdo = noParaRemover.Esquerdo;
+                    noParaRemover.Esquerdo.Pai = noParaRemover.Pai;
+                }
+                else
+                {
+                    noParaRemover.Pai.Direito = noParaRemover.Esquerdo;
+                    noParaRemover.Esquerdo.Pai = noParaRemover.Pai;
+                }
+                return;
+            }
+
+            //Remoção de nó com 2 filhos
+
 
         }
 
         public void NavegarEmOrdem(No<T, F> no)
         {
-            if (no != null){
+            if (no != null)
+            {
                 NavegarEmOrdem(no.Esquerdo);
                 Console.Write(" " + no.Chave);
                 NavegarEmOrdem(no.Direito);
@@ -91,7 +140,7 @@ namespace ArvoreBinaria
         public void NavegarPreOrdem(No<T, F> no)
         {
             if (no != null)
-            {            
+            {
                 Console.Write(" " + no.Chave);
                 NavegarEmOrdem(no.Esquerdo);
                 NavegarEmOrdem(no.Direito);
@@ -102,7 +151,7 @@ namespace ArvoreBinaria
         {
             if (no != null)
             {
-                NavegarEmOrdem(no.Esquerdo);               
+                NavegarEmOrdem(no.Esquerdo);
                 NavegarEmOrdem(no.Direito);
                 Console.Write(" " + no.Chave);
             }
