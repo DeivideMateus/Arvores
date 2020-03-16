@@ -17,9 +17,6 @@ namespace ArvoreBinaria
             arvore.Adicionar(35, "Moura");
             arvore.Adicionar(25, "Selma");
 
-
-
-
             No<int, string> noBuscado = arvore.Buscar(25);
             Console.WriteLine(noBuscado.Valor);
             Console.WriteLine(noBuscado.Pai.Valor);
@@ -27,21 +24,28 @@ namespace ArvoreBinaria
             Console.WriteLine("\n");
             arvore.NavegarEmOrdem(arvore.Raiz);
             Console.WriteLine("\n");
+            
             /*arvore.NavegarPreOrdem(arvore.Raiz);
             Console.WriteLine("\n");
             arvore.NavegarPosOrdem(arvore.Raiz);*/
+
+            arvore.Remover(75);
+
+            arvore.NavegarEmOrdem(arvore.Raiz);
+            Console.WriteLine("\n");
 
             arvore.Remover(70);
 
             arvore.NavegarEmOrdem(arvore.Raiz);
             Console.WriteLine("\n");
 
-            arvore.Remover(70);
+            arvore.Remover(30);
 
             arvore.NavegarEmOrdem(arvore.Raiz);
             Console.WriteLine("\n");
 
             Console.WriteLine(arvore.Buscar(60).Pai.Chave +" "+ arvore.Buscar(60).Pai.Valor);
+            Console.WriteLine(arvore.Buscar(25).Pai.Chave + " " + arvore.Buscar(25).Pai.Valor);
 
             Console.ReadLine();
         }

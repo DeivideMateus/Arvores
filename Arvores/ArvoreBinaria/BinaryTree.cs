@@ -73,11 +73,15 @@ namespace ArvoreBinaria
             }
             return noAtual;
         }
-
+        
         public void Remover(T chave)
         {
             No<T, F> noParaRemover = Buscar(chave);
+            RemoverRecursivo(noParaRemover);
+        }
 
+        public void RemoverRecursivo(No<T, F> noParaRemover)
+        {
             //Remoção de nó folha
             if (noParaRemover.Esquerdo == null && noParaRemover.Direito == null)
             {
@@ -93,7 +97,7 @@ namespace ArvoreBinaria
             }
 
             //Remoção de nó com 1 filho
-            if (noParaRemover.Esquerdo == null && noParaRemover.Direito != null)
+            if (noParaRemover.Esquerdo == null)
             {
                 if (noParaRemover.Pai.Esquerdo.Chave.Equals(noParaRemover.Chave))
                 {
@@ -107,7 +111,7 @@ namespace ArvoreBinaria
                 }
                 return;
             }
-            else if (noParaRemover.Esquerdo != null && noParaRemover.Direito == null)
+            else if (noParaRemover.Direito == null)
             {
                 if (noParaRemover.Pai.Esquerdo.Chave.Equals(noParaRemover.Chave))
                 {
@@ -123,10 +127,26 @@ namespace ArvoreBinaria
             }
 
             //Remoção de nó com 2 filhos
+            No<T, F> noSucessor = ObterSucessor(noParaRemover);
 
+            noParaRemover.Chave = noSucessor.Chave;
+            noParaRemover.Valor = noSucessor.Valor;
 
+            RemoverRecursivo(noSucessor);
         }
 
+        public No<T, F> ObterSucessor(No<T, F> noParaRemover)
+        {
+            No<T, F> noSucessor = noParaRemover.Direito;
+
+            while (noSucessor.Esquerdo != null)
+            {
+                noSucessor = noSucessor.Esquerdo;
+            }
+
+            return noSucessor;
+        }
+        
         public void NavegarEmOrdem(No<T, F> no)
         {
             if (no != null)
@@ -157,6 +177,7 @@ namespace ArvoreBinaria
             }
         }
 
+        
 
 
         public BinaryTree()
