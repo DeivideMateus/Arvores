@@ -162,8 +162,8 @@ namespace ArvoreBinaria
             if (no != null)
             {
                 Console.Write(" " + no.Chave);
-                NavegarEmOrdem(no.Esquerdo);
-                NavegarEmOrdem(no.Direito);
+                NavegarPreOrdem(no.Esquerdo);
+                NavegarPreOrdem(no.Direito);
             }
         }
 
@@ -171,8 +171,8 @@ namespace ArvoreBinaria
         {
             if (no != null)
             {
-                NavegarEmOrdem(no.Esquerdo);
-                NavegarEmOrdem(no.Direito);
+                NavegarPosOrdem(no.Esquerdo);
+                NavegarPosOrdem(no.Direito);
                 Console.Write(" " + no.Chave);
             }
         }

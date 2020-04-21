@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "D7b1DO0G/0orHbfu8n3Y/xgZ7Nc5XD8P0SIeYVL6Ig9Fw8ukGsU929R+JxctiI8wVm0Q98V7InBNDj2tjk00hA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\deivide.nascimento\\Documents\\GitHub\\Talents2\\Arvores\\Arvores\\ArvoreBinaria\\ArvoreBinaria.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\deivide.nascimento\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\deivide.nascimento\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
