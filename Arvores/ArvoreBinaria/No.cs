@@ -4,20 +4,20 @@ using System.Text;
 
 namespace ArvoreBinaria
 {
-    public class No<T ,F> where T: IComparable
+    public class No
     {
-        public T Chave { get; set; }
-        public F Valor { get; set; }
-        public No<T, F> Esquerdo { get; set; }
-        public No<T, F> Direito { get; set; }
-        public No<T, F> Pai { get; set; }
+        public int Chave { get; set; }
+        public int Valor { get; set; }
+        public No Esquerdo { get; set; }
+        public No Direito { get; set; }
+        public No Pai { get; set; }
 
         public No()
         {
 
         }
 
-        public No(T chave, F valor)
+        public No(int chave, int valor)
         {
             this.Chave = chave;
             this.Valor = valor;

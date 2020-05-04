@@ -1,26 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace ArvoreBinaria
 {
-    public class BinaryTree<T, F> where T : IComparable
+    public class BinaryTree
     {
-        public No<T, F> Raiz { get; set; }
+        private int numeroDeFolhas;
+        private double soma;
+        public double QuantidadeNos { get; set; }
+        public No Raiz { get; set; }
 
 
-        public void Adicionar(T chave, F valor)
+        public void Adicionar(int chave, int valor)
         {
-            No<T, F> novoNo = new No<T, F>(chave, valor);
+            No novoNo = new No(chave, valor);
 
             if (this.Raiz == null)
             {
                 this.Raiz = novoNo;
+                QuantidadeNos++;
+                this.soma = soma + chave;
             }
             else
             {
-                No<T, F> noAtual = this.Raiz;
-                No<T, F> noPai;
+                No noAtual = this.Raiz;
+                No noPai;
 
                 while (true)
                 {
@@ -33,6 +39,8 @@ namespace ArvoreBinaria
                         {
                             noPai.Esquerdo = novoNo;
                             noPai.Esquerdo.Pai = noPai;
+                            QuantidadeNos++;
+                            this.soma = soma + chave;
                             return;
                         }
                     }
@@ -44,6 +52,8 @@ namespace ArvoreBinaria
                         {
                             noPai.Direito = novoNo;
                             noPai.Direito.Pai = noPai;
+                            QuantidadeNos++;
+                            this.soma = soma + chave;
                             return;
                         }
                     }
@@ -52,9 +62,9 @@ namespace ArvoreBinaria
             }
         }
 
-        public No<T, F> Buscar(T chave)
+        public No Buscar(int chave)
         {
-            No<T, F> noAtual = this.Raiz;
+            No noAtual = this.Raiz;
 
             while (!noAtual.Chave.Equals(chave))
             {
@@ -73,18 +83,28 @@ namespace ArvoreBinaria
             }
             return noAtual;
         }
-        
-        public void Remover(T chave)
+
+        public void Remover(int chave)
         {
-            No<T, F> noParaRemover = Buscar(chave);
-            RemoverRecursivo(noParaRemover);
+            No noParaRemover = Buscar(chave);
+            if (noParaRemover != null)
+            {
+                RemoverRecursivo(noParaRemover);
+                QuantidadeNos--;
+                this.soma = soma - chave;
+            }
+            else
+            {
+                Console.WriteLine("O valor informado não existe!");
+            }
         }
 
-        public void RemoverRecursivo(No<T, F> noParaRemover)
+        private void RemoverRecursivo(No noParaRemover)
         {
             //Remoção de nó folha
             if (noParaRemover.Esquerdo == null && noParaRemover.Direito == null)
             {
+
                 if (noParaRemover.Pai.Esquerdo.Chave.Equals(noParaRemover.Chave))
                 {
                     noParaRemover.Pai.Esquerdo = null;
@@ -127,7 +147,7 @@ namespace ArvoreBinaria
             }
 
             //Remoção de nó com 2 filhos
-            No<T, F> noSucessor = ObterSucessor(noParaRemover);
+            No noSucessor = ObterSucessor(noParaRemover);
 
             noParaRemover.Chave = noSucessor.Chave;
             noParaRemover.Valor = noSucessor.Valor;
@@ -135,9 +155,9 @@ namespace ArvoreBinaria
             RemoverRecursivo(noSucessor);
         }
 
-        public No<T, F> ObterSucessor(No<T, F> noParaRemover)
+        public No ObterSucessor(No noParaRemover)
         {
-            No<T, F> noSucessor = noParaRemover.Direito;
+            No noSucessor = noParaRemover.Direito;
 
             while (noSucessor.Esquerdo != null)
             {
@@ -146,8 +166,8 @@ namespace ArvoreBinaria
 
             return noSucessor;
         }
-        
-        public void NavegarEmOrdem(No<T, F> no)
+
+        public void NavegarEmOrdem(No no)
         {
             if (no != null)
             {
@@ -157,7 +177,7 @@ namespace ArvoreBinaria
             }
         }
 
-        public void NavegarPreOrdem(No<T, F> no)
+        public void NavegarPreOrdem(No no)
         {
             if (no != null)
             {
@@ -167,7 +187,7 @@ namespace ArvoreBinaria
             }
         }
 
-        public void NavegarPosOrdem(No<T, F> no)
+        public void NavegarPosOrdem(No no)
         {
             if (no != null)
             {
@@ -177,7 +197,52 @@ namespace ArvoreBinaria
             }
         }
 
-        
+        public void GetMaiorMenorNumero()
+        {
+            No noAtualMenor = this.Raiz;
+            No noAtualMaior = this.Raiz;
+            int maior = noAtualMaior.Chave;
+            int menor = noAtualMenor.Chave;
+
+            while (noAtualMenor.Esquerdo != null)
+            {
+                noAtualMenor = noAtualMenor.Esquerdo;
+                menor = noAtualMenor.Chave;
+            }
+
+            while (noAtualMaior.Direito != null)
+            {
+                noAtualMaior = noAtualMaior.Direito;
+                maior = noAtualMaior.Chave;
+            }
+
+            Console.WriteLine(" Maior número: {0} \n Menor número: {1}", maior, menor);
+        }
+
+        public double GetMedia()
+        {
+            return this.soma / QuantidadeNos;
+        }
+
+        public void IncrementaFolhas(No no)
+        {
+            if (no != null)
+            {
+                if (no.Esquerdo == null && no.Direito == null)
+                {
+                    numeroDeFolhas++;
+                }
+                IncrementaFolhas(no.Esquerdo);
+                IncrementaFolhas(no.Direito);
+            }
+        }
+
+        public int NumeroDeFolhas()
+        {
+            this.numeroDeFolhas = 0;
+            this.IncrementaFolhas(this.Raiz);
+            return this.numeroDeFolhas;
+        }
 
 
         public BinaryTree()
@@ -185,7 +250,7 @@ namespace ArvoreBinaria
 
         }
 
-        public BinaryTree(No<T, F> novoNo)
+        public BinaryTree(No novoNo)
         {
             this.Raiz = novoNo;
         }
