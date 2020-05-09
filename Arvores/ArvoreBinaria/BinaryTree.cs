@@ -13,6 +13,7 @@ namespace ArvoreBinaria
         public No Raiz { get; set; }
 
 
+
         public void Adicionar(int chave, int valor)
         {
             No novoNo = new No(chave, valor);
@@ -61,7 +62,6 @@ namespace ArvoreBinaria
 
             }
         }
-
         public No Buscar(int chave)
         {
             No noAtual = this.Raiz;
@@ -83,7 +83,6 @@ namespace ArvoreBinaria
             }
             return noAtual;
         }
-
         public void Remover(int chave)
         {
             No noParaRemover = Buscar(chave);
@@ -98,7 +97,6 @@ namespace ArvoreBinaria
                 Console.WriteLine("O valor informado não existe!");
             }
         }
-
         private void RemoverRecursivo(No noParaRemover)
         {
             //Remoção de nó folha
@@ -154,7 +152,6 @@ namespace ArvoreBinaria
 
             RemoverRecursivo(noSucessor);
         }
-
         public No ObterSucessor(No noParaRemover)
         {
             No noSucessor = noParaRemover.Direito;
@@ -167,7 +164,11 @@ namespace ArvoreBinaria
             return noSucessor;
         }
 
-        public void NavegarEmOrdem(No no)
+        public void NavegarEmOrdem()
+        {
+            NavegarEmOrdem(this.Raiz);
+        }
+        private void NavegarEmOrdem(No no)
         {
             if (no != null)
             {
@@ -177,7 +178,11 @@ namespace ArvoreBinaria
             }
         }
 
-        public void NavegarPreOrdem(No no)
+        public void NavegarPreOrdem()
+        {
+            NavegarPreOrdem(this.Raiz);
+        }
+        private void NavegarPreOrdem(No no)
         {
             if (no != null)
             {
@@ -187,7 +192,11 @@ namespace ArvoreBinaria
             }
         }
 
-        public void NavegarPosOrdem(No no)
+        public void NavegarPosOrdem()
+        {
+            NavegarPosOrdem(this.Raiz);
+        }
+        private void NavegarPosOrdem(No no)
         {
             if (no != null)
             {
@@ -218,13 +227,11 @@ namespace ArvoreBinaria
 
             Console.WriteLine(" Maior número: {0} \n Menor número: {1}", maior, menor);
         }
-
         public double GetMedia()
         {
             return this.soma / QuantidadeNos;
         }
-
-        public void IncrementaFolhas(No no)
+        private void IncrementarFolhas(No no)
         {
             if (no != null)
             {
@@ -232,17 +239,43 @@ namespace ArvoreBinaria
                 {
                     numeroDeFolhas++;
                 }
-                IncrementaFolhas(no.Esquerdo);
-                IncrementaFolhas(no.Direito);
+                IncrementarFolhas(no.Esquerdo);
+                IncrementarFolhas(no.Direito);
             }
         }
-
-        public int NumeroDeFolhas()
+        public int GetNumeroDeFolhas()
         {
             this.numeroDeFolhas = 0;
-            this.IncrementaFolhas(this.Raiz);
+            this.IncrementarFolhas(this.Raiz);
             return this.numeroDeFolhas;
         }
+
+        public int GetAltura()
+        {
+            return GetAltura(this.Raiz);
+        }
+        private int GetAltura(No no)
+        {
+            if (no != null)
+            {
+                int alturaEsquerda, alturaDireita;
+
+                alturaEsquerda = GetAltura(no.Esquerdo);
+                alturaDireita = GetAltura(no.Direito);
+
+                if (alturaEsquerda > alturaDireita)
+                {
+                    return alturaEsquerda + 1;
+                } 
+                else
+                {
+                    return alturaDireita + 1;
+                }
+            }
+            return 0;
+        }
+
+
 
 
         public BinaryTree()

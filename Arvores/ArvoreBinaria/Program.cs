@@ -28,11 +28,11 @@ namespace ArvoreBinaria
             // Letra A
             Console.WriteLine("Letra A: \n");
             Console.Write(" in-ordem:");
-            arvore.NavegarEmOrdem(arvore.Raiz);
+            arvore.NavegarEmOrdem();
             Console.Write("\n\n pre-ordem:");          
-            arvore.NavegarPreOrdem(arvore.Raiz);
+            arvore.NavegarPreOrdem();
             Console.Write("\n\n pos-ordem:");
-            arvore.NavegarPosOrdem(arvore.Raiz);
+            arvore.NavegarPosOrdem();
             Console.WriteLine("\n");
 
             // Letra B
@@ -61,20 +61,21 @@ namespace ArvoreBinaria
 
             // letra F
             Console.WriteLine("\nLetra F: \n");
-            Console.WriteLine(" Número de folhas da árvore: {0}", arvore.NumeroDeFolhas());
+            Console.WriteLine(" Número de folhas da árvore: {0}", arvore.GetNumeroDeFolhas());
 
             // letra G
-
+            Console.WriteLine("\nLetra G: \n");
+            Console.WriteLine(" Altura da árvore: {0}", arvore.GetAltura());
 
             // letra H
-            
+
             arvore.Remover(75); //removendo nó com 2 filhos
             arvore.Remover(42); //removendo nó com 1 filho
             arvore.Remover(5);  //removendo nó folha
 
             Console.WriteLine("\nLetra H: \n");
             Console.Write(" Valores da árvore depois da remoção: ");
-            arvore.NavegarEmOrdem(arvore.Raiz);
+            arvore.NavegarEmOrdem();
 
 
             Console.ReadLine();
