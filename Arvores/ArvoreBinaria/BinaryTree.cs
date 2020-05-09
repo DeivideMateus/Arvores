@@ -14,15 +14,15 @@ namespace ArvoreBinaria
 
 
 
-        public void Adicionar(int chave, int valor)
+        public void Adicionar(int valor)
         {
-            No novoNo = new No(chave, valor);
+            No novoNo = new No(valor);
 
             if (this.Raiz == null)
             {
                 this.Raiz = novoNo;
                 QuantidadeNos++;
-                this.soma = soma + chave;
+                this.soma = soma + valor;
             }
             else
             {
@@ -32,7 +32,7 @@ namespace ArvoreBinaria
                 while (true)
                 {
                     noPai = noAtual;
-                    if (chave.CompareTo(noAtual.Chave) < 0)
+                    if (valor.CompareTo(noAtual.Valor) < 0)
                     {
                         noAtual = noAtual.Esquerdo;
 
@@ -41,7 +41,7 @@ namespace ArvoreBinaria
                             noPai.Esquerdo = novoNo;
                             noPai.Esquerdo.Pai = noPai;
                             QuantidadeNos++;
-                            this.soma = soma + chave;
+                            this.soma = soma + valor;
                             return;
                         }
                     }
@@ -54,7 +54,7 @@ namespace ArvoreBinaria
                             noPai.Direito = novoNo;
                             noPai.Direito.Pai = noPai;
                             QuantidadeNos++;
-                            this.soma = soma + chave;
+                            this.soma = soma + valor;
                             return;
                         }
                     }
@@ -66,9 +66,9 @@ namespace ArvoreBinaria
         {
             No noAtual = this.Raiz;
 
-            while (!noAtual.Chave.Equals(chave))
+            while (!noAtual.Valor.Equals(chave))
             {
-                if (chave.CompareTo(noAtual.Chave) < 0)
+                if (chave.CompareTo(noAtual.Valor) < 0)
                 {
                     noAtual = noAtual.Esquerdo;
                 }
@@ -103,7 +103,7 @@ namespace ArvoreBinaria
             if (noParaRemover.Esquerdo == null && noParaRemover.Direito == null)
             {
 
-                if (noParaRemover.Pai.Esquerdo.Chave.Equals(noParaRemover.Chave))
+                if (noParaRemover.Pai.Esquerdo.Valor.Equals(noParaRemover.Valor))
                 {
                     noParaRemover.Pai.Esquerdo = null;
                 }
@@ -117,7 +117,7 @@ namespace ArvoreBinaria
             //Remoção de nó com 1 filho
             if (noParaRemover.Esquerdo == null)
             {
-                if (noParaRemover.Pai.Esquerdo.Chave.Equals(noParaRemover.Chave))
+                if (noParaRemover.Pai.Esquerdo.Valor.Equals(noParaRemover.Valor))
                 {
                     noParaRemover.Pai.Esquerdo = noParaRemover.Direito;
                     noParaRemover.Direito.Pai = noParaRemover.Pai;
@@ -131,7 +131,7 @@ namespace ArvoreBinaria
             }
             else if (noParaRemover.Direito == null)
             {
-                if (noParaRemover.Pai.Esquerdo.Chave.Equals(noParaRemover.Chave))
+                if (noParaRemover.Pai.Esquerdo.Valor.Equals(noParaRemover.Valor))
                 {
                     noParaRemover.Pai.Esquerdo = noParaRemover.Esquerdo;
                     noParaRemover.Esquerdo.Pai = noParaRemover.Pai;
@@ -147,7 +147,7 @@ namespace ArvoreBinaria
             //Remoção de nó com 2 filhos
             No noSucessor = ObterSucessor(noParaRemover);
 
-            noParaRemover.Chave = noSucessor.Chave;
+            noParaRemover.Valor = noSucessor.Valor;
             noParaRemover.Valor = noSucessor.Valor;
 
             RemoverRecursivo(noSucessor);
@@ -173,7 +173,7 @@ namespace ArvoreBinaria
             if (no != null)
             {
                 NavegarEmOrdem(no.Esquerdo);
-                Console.Write(" " + no.Chave);
+                Console.Write(" " + no.Valor);
                 NavegarEmOrdem(no.Direito);
             }
         }
@@ -186,7 +186,7 @@ namespace ArvoreBinaria
         {
             if (no != null)
             {
-                Console.Write(" " + no.Chave);
+                Console.Write(" " + no.Valor);
                 NavegarPreOrdem(no.Esquerdo);
                 NavegarPreOrdem(no.Direito);
             }
@@ -202,30 +202,30 @@ namespace ArvoreBinaria
             {
                 NavegarPosOrdem(no.Esquerdo);
                 NavegarPosOrdem(no.Direito);
-                Console.Write(" " + no.Chave);
+                Console.Write(" " + no.Valor);
             }
         }
 
-        public void GetMaiorMenorNumero()
+        public void GetMaiorMenorValor()
         {
             No noAtualMenor = this.Raiz;
             No noAtualMaior = this.Raiz;
-            int maior = noAtualMaior.Chave;
-            int menor = noAtualMenor.Chave;
+            int maior = noAtualMaior.Valor;
+            int menor = noAtualMenor.Valor;
 
             while (noAtualMenor.Esquerdo != null)
             {
                 noAtualMenor = noAtualMenor.Esquerdo;
-                menor = noAtualMenor.Chave;
+                menor = noAtualMenor.Valor;
             }
 
             while (noAtualMaior.Direito != null)
             {
                 noAtualMaior = noAtualMaior.Direito;
-                maior = noAtualMaior.Chave;
+                maior = noAtualMaior.Valor;
             }
 
-            Console.WriteLine(" Maior número: {0} \n Menor número: {1}", maior, menor);
+            Console.WriteLine(" Maior valor: {0} \n Menor valor: {1}", maior, menor);
         }
         public double GetMedia()
         {

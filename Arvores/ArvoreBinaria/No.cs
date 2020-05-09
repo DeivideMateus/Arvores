@@ -6,7 +6,6 @@ namespace ArvoreBinaria
 {
     public class No
     {
-        public int Chave { get; set; }
         public int Valor { get; set; }
         public No Esquerdo { get; set; }
         public No Direito { get; set; }
@@ -17,9 +16,8 @@ namespace ArvoreBinaria
 
         }
 
-        public No(int chave, int valor)
+        public No(int valor)
         {
-            this.Chave = chave;
             this.Valor = valor;
             this.Esquerdo = null;
             this.Direito = null;
