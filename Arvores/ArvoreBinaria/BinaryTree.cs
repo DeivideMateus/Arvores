@@ -62,13 +62,13 @@ namespace ArvoreBinaria
 
             }
         }
-        public No Buscar(int chave)
+        public No Buscar(int valor)
         {
             No noAtual = this.Raiz;
 
-            while (!noAtual.Valor.Equals(chave))
+            while (!noAtual.Valor.Equals(valor))
             {
-                if (chave.CompareTo(noAtual.Valor) < 0)
+                if (valor.CompareTo(noAtual.Valor) < 0)
                 {
                     noAtual = noAtual.Esquerdo;
                 }
@@ -83,14 +83,14 @@ namespace ArvoreBinaria
             }
             return noAtual;
         }
-        public void Remover(int chave)
+        public void Remover(int valor)
         {
-            No noParaRemover = Buscar(chave);
+            No noParaRemover = Buscar(valor);
             if (noParaRemover != null)
             {
                 RemoverRecursivo(noParaRemover);
                 QuantidadeNos--;
-                this.soma = soma - chave;
+                this.soma = soma - valor;
             }
             else
             {
@@ -147,7 +147,6 @@ namespace ArvoreBinaria
             //Remoção de nó com 2 filhos
             No noSucessor = ObterSucessor(noParaRemover);
 
-            noParaRemover.Valor = noSucessor.Valor;
             noParaRemover.Valor = noSucessor.Valor;
 
             RemoverRecursivo(noSucessor);

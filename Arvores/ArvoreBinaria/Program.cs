@@ -29,6 +29,7 @@ namespace ArvoreBinaria
                     Console.Write("\nInforme o valor: ");
                     int valor = Int32.Parse(Console.ReadLine());
                     arvore.Adicionar(valor);
+                    Console.ReadLine();
                 }
                 else if (opcao == 2)
                 {
@@ -43,50 +44,60 @@ namespace ArvoreBinaria
                     {
                         Console.WriteLine(" Valor {0} encontrado", noBuscado.Valor);
                     }
+                    Console.ReadLine();
                 }
                 else if (opcao == 3)
                 {
                     Console.Write("\nInforme o valor: ");
                     int valor = Int32.Parse(Console.ReadLine());
                     arvore.Remover(valor);
+                    Console.ReadLine();
                 }
                 else if (opcao == 4)
                 {
                     Console.Write(" in-ordem:");
                     arvore.NavegarEmOrdem();
                     Console.Write("\n");
+                    Console.ReadLine();
                 }
                 else if (opcao == 5)
                 {
                     Console.Write(" pos-ordem:");
                     arvore.NavegarPosOrdem();
                     Console.Write("\n");
+                    Console.ReadLine();
                 }
                 else if (opcao == 6)
                 {
                     Console.Write(" pre-ordem:");
                     arvore.NavegarPreOrdem();
                     Console.Write("\n");
+                    Console.ReadLine();
                 }
                 else if (opcao == 7)
                 {
                     arvore.GetMaiorMenorValor();
+                    Console.ReadLine();
                 }
                 else if (opcao == 8)
                 {
                     Console.WriteLine(" Média dos valores: {0}", arvore.GetMedia());
+                    Console.ReadLine();
                 }
                 else if (opcao == 9)
                 {
                     Console.WriteLine(" Número de nós da árvore: {0}", arvore.QuantidadeNos);
+                    Console.ReadLine();
                 }
                 else if (opcao == 10)
                 {
                     Console.WriteLine(" Número de folhas da árvore: {0}", arvore.GetNumeroDeFolhas());
+                    Console.ReadLine();
                 }
                 else if (opcao == 11)
                 {
                     Console.WriteLine(" Altura da árvore: {0}", arvore.GetAltura());
+                    Console.ReadLine();
                 }
             }
 
